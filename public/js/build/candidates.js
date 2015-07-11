@@ -109,12 +109,11 @@ var Candidates = React.createClass({
 
   formatPartyType: function(value) {
     if (value == 'X') {
-      return '&nbsp;';
+      return '';
     }
     else {
       return value;
     }
-
   },
 
   checkBox: function(value) {

@@ -28,21 +28,25 @@ a:active,a:hover {
 
 .set-item {
   margin-bottom: 40px;
+
   .contest {
     font-size: $font-size-large;
   }
-
 }
 
 .set-item[type="measure"] {
+
   .ballot-section {
     background-color: $color-light-medium-grey;
     font-size: $font-size-XS;
     color: $color-offwhite;
     padding: 2px 4px;
     text-transform: uppercase;
+    line-height: 1em;
+    height: 1.3em;
   }
   .name {
+    margin-top: 20px;
     font-size: $font-size-large;
   }
 
@@ -52,13 +56,14 @@ a:active,a:hover {
   }
 
   .measure-type{
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: $font-size-large;
     color: $color-dark-grey-text;
+    line-height: 1em;
   }
 
   .description {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   a,a:visited  {
@@ -86,6 +91,7 @@ a:active,a:hover {
     padding: 2px 4px;
     background-color: $color-light-medium-grey;
     line-height: 1em;
+    height: 1.3em;
   }
 
   .party[type="party-type-D"] {

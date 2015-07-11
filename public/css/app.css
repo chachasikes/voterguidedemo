@@ -28,18 +28,22 @@ a:active, a:hover {
   font-size: 0.7em;
   color: #fefefe;
   padding: 2px 4px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 1em;
+  height: 1.3em; }
 .set-item[type="measure"] .name {
+  margin-top: 20px;
   font-size: 1.4em; }
 .set-item[type="measure"] .measure-topic {
   font-size: 2.8em;
   line-height: 1em; }
 .set-item[type="measure"] .measure-type {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 1.4em;
-  color: #38383a; }
+  color: #38383a;
+  line-height: 1em; }
 .set-item[type="measure"] .description {
-  margin-top: 10px; }
+  margin-top: 20px; }
 .set-item[type="measure"] a, .set-item[type="measure"] a:visited {
   font-weight: 700;
   text-align: right; }
@@ -55,7 +59,8 @@ a:active, a:hover {
   color: #fefefe;
   padding: 2px 4px;
   background-color: #9a9ba5;
-  line-height: 1em; }
+  line-height: 1em;
+  height: 1.3em; }
 .set-item[type="candidate"] .party[type="party-type-D"] {
   background-color: #2e4399; }
 .set-item[type="candidate"] .party[type="party-type-R"] {
