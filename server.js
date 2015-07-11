@@ -7,8 +7,8 @@ var async = require('async');
 var rp = require('request-promise');
 var _ = require('underscore');
 var jade = require('jade');
-var sass  = require('node-sass');
-var compileSass = require('express-compile-sass');
+// var sass  = require('node-sass');
+// var compileSass = require('express-compile-sass');
 var path = require('path');
 
 
@@ -86,15 +86,15 @@ var app = module.exports = express();
 app.set('views', './views');
 app.set('view engine', 'jade');
 
-root = process.cwd();
-console.log(root);
-app.use(compileSass({
-    root: root + "/public",
-    sourceMap: true, // Includes Base64 encoded source maps in output css 
-    sourceComments: true, // Includes source comments in output css 
-    watchFiles: true, // Watches sass files and updates mtime on main files for each change 
-    logToConsole: false // If true, will log to console.error on errors 
-}));
+// root = process.cwd();
+
+// app.use(compileSass({
+//     root: root + "/public",
+//     sourceMap: true, // Includes Base64 encoded source maps in output css 
+//     sourceComments: true, // Includes source comments in output css 
+//     watchFiles: true, // Watches sass files and updates mtime on main files for each change 
+//     logToConsole: false // If true, will log to console.error on errors 
+// }));
 
 app.use(express.static('public'));
 
