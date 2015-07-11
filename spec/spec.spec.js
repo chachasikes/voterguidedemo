@@ -1,8 +1,10 @@
-var request = require("request");
+// install jasmine-node
+// run tests: jasmine-node spec
 
+var request = require("request");
 var base_url = "http://localhost:3000/"
 
-describe("Hello World Server", function() {
+describe("Server is working.", function() {
   describe("GET /", function() {
     it("returns status code 200", function(done) {
       request.get(base_url, function(error, response, body) {
@@ -11,10 +13,9 @@ describe("Hello World Server", function() {
       });
     });
 
-    it("returns Hello World", function(done) {
+    it("returns Title", function(done) {
       request.get(base_url, function(error, response, body) {
-        expect(body).toBe("Hello World");
-            // expect(result.length).toBe(3);
+        expect(body).toMatch("Voter");
         done();
       });
     });
