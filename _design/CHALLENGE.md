@@ -1,7 +1,3 @@
-Chacha
-
-It was great talking with you today. Let's check back in on Tuesday or Wednesday.
-
 The coding challenge will consist of 3 parts.
 
  1. Create a NodeJs / Express App

@@ -93,17 +93,28 @@ var Candidates = React.createClass({
   // Render each item.
   eachItem: function(item, i) {
     if (item !== null) {
-      return (<div className="set-item">
-      <div className="ballot-section">{item.ballot_section}</div>
-      <div className="contest">{item.contest}</div>
-      <div className="name"><a href={item.url}>{item.name}</a></div>
-      <div className="party">{item.party}</div>
-      <div className="vote">{item.yes_no}</div>
+      return (<div className="set-item" type="candidate">
+        <div className="name"><a href={item.url}>{item.name}</a></div>
+        <div className="party" type={"party-type-" + item.party_type}>{item.party_type}</div>
+        <div className="ballot-section">{item.ballot_section}</div>
+        <div className="contest">{item.office_name}</div>
+        <div className="district">{item.district}</div>
+        <div className="vote">{this.checkBox(item.yes_no)}</div>
       </div>);
     }
     else {
       return;
     }
+  },
+
+  checkBox: function(value) {
+    if(value === 1) {
+      return (<div></div>)
+    }
+    else {
+      return
+    }
+
   },
 
   render: function() {

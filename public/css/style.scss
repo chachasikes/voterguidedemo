@@ -1,24 +1,68 @@
 @import "common";
 
 body { 
-  background: $body-background; 
+  background: $body-background;
+  font-size: $default-font-size;
+  font-family: $font-family;
+  color: $color-dark-text;
 }
 
-.ballot-section {
+.set-item {
+  margin-bottom: 40px;
+
+  .ballot-section {
+    font-weight: $font-weight-light;
+  }
+  .contest {
+    font-size: $font-size-large;
+
+  }
 
 }
-.contest {
-  font-size: 2em;
+
+.set-item[type="measure"] {
+
+  .measure-topic {
+    font-size: $font-size-XL;
+  }
+
+  .measure-type{
+    font-size: $font-size-large;
+    color: $color-dark-grey-text;
+  }
+
+  .description {
+    margin-top: 20px;
+  }
+
+
 }
+.set-item[type="candidate"] {
 
-.name {
 
-}
 
-.party {
+  .name {
+    font-size: $font-size-XL;
+    font-weight: $font-weight-bold;
+  }
 
-}
+  .party {
+    font-size: $font-size-XS;
+    color: $color-offwhite;
+    padding: 2px 4px;
+  }
 
-.vote {
+  .party[type="party-type-D"] {
+    background-color: $color-party-democrat;
+  }
+
+  .party[type="party-type-R"] {
+    background-color: $color-party-republican;
+  }
+
+
+  .vote {
+
+  }
 
 }

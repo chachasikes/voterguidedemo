@@ -1,7 +1,32 @@
 body {
-  background: #FEFEFE; }
+  background: #fefefe;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  color: #111111; }
 
-.contest {
+.set-item {
+  margin-bottom: 40px; }
+  .set-item .ballot-section {
+    font-weight: 100; }
+  .set-item .contest {
+    font-size: 1.2em; }
+
+.set-item[type="measure"] .measure-topic {
   font-size: 2em; }
+.set-item[type="measure"] .measure-type {
+  font-size: 1.2em;
+  color: #38383a; }
+.set-item[type="measure"] .description {
+  margin-top: 20px; }
 
-/*# sourceMappingURL=app.css.map */
+.set-item[type="candidate"] .name {
+  font-size: 2em;
+  font-weight: 700; }
+.set-item[type="candidate"] .party {
+  font-size: 0.6em;
+  color: #fefefe;
+  padding: 2px 4px; }
+.set-item[type="candidate"] .party[type="party-type-D"] {
+  background-color: #2e4399; }
+.set-item[type="candidate"] .party[type="party-type-R"] {
+  background-color: #a82f22; }

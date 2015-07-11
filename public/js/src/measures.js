@@ -75,17 +75,38 @@ var Measures = React.createClass({
   // Render each item.
   eachItem: function(item, i) {
     if (item !== null) {
-      return (<div className="set-item">
-      <div className="ballot-section">{item.ballot_section}</div>
-      <div className="contest">{item.contest}</div>
-      <div className="identifier"><a href={item.url}>{item.identifier}</a></div>
-      <div className="topic">{item.topic}</div>
+      return (<div className="set-item" type="measure">
+
+        <div className="ballot-section">{item.ballot_section}</div>
+        <div className="name"><a href={item.url}>{item.identifier}</a></div>
+        <div className="measure-name">{item.office_name}</div>
+        <div className="district">{item.district}</div>
+        <div className="measure-topic">{item.topic}</div>
+        <div className="measure-type">{item.proposition_type}</div>
+        <div className="description"><div className="content"
+          dangerouslySetInnerHTML={{
+            __html: item.summary
+          }}/> {this.readMore(item.read_more)}</div>
+
+
+
       </div>);
     }
     else {
       return;
     }
   },
+
+  readMore: function(value) {
+    if (value !== undefined) {
+      var link = React.createElement('a', {href: value, className: 'glyphicon glyphicon-ok', target: '_blank'}, 'More');
+      return link;
+    }
+    else {
+      return;
+    } 
+  },
+
 
   render: function() {
     return this.renderDisplay();
@@ -98,3 +119,4 @@ var Measures = React.createClass({
   },
 
 });
+

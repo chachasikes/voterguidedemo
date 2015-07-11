@@ -11,18 +11,23 @@ var jade = require('jade');
 // var compileSass = require('express-compile-sass');
 var path = require('path');
 
-
 // App settings.
 var voterGuide = {};
-voterGuide.candidates = {};
-voterGuide.measures = {};
-voterGuide.candidates.endpoint = "http://216.151.17.6:3000/api/votersedge/candidates/all";
-voterGuide.measures.endpoint = "http://216.151.17.6:3000/api/votersedge/measures/all";
-voterGuide.candidates.limit = 5;
-voterGuide.measures.limit = 5;
 voterGuide.localData = {};
-voterGuide.candidates.fields = ['ballot_section', 'contest', 'name','party','yes_no','url']; // These are currently identical but this can be used to validate and limit data returned.
-voterGuide.measures.fields = ['ballot_section', 'contest', 'identifier','topic','url'];
+
+voterGuide.candidates = {};
+voterGuide.candidates.limit = 15;
+voterGuide.candidates.endpoint = "http://216.151.17.6:3000/api/votersedge/candidates/all";
+voterGuide.candidates.fields = ['ballot_section', 'contest', 'name','party','yes_no','url', "office_name", "district_display", "election_date", "party_type", "state_name"]; // These are currently identical but this can be used to validate and limit data returned.
+voterGuide.candidates.clusterFields = ['election_date', 'contest'];
+
+voterGuide.measures = {};
+voterGuide.measures.limit = 15;
+voterGuide.measures.endpoint = "http://216.151.17.6:3000/api/votersedge/measures/all";
+voterGuide.measures.fields = ['ballot_section', 'contest', 'identifier','topic','url', 'topic', 'summary', 'full_text', 'proposition_type'];
+
+// Group ordering for related fieldsets.
+voterGuide.measures.clusterFields = ['election_date', 'contest'];
 
 // Load data from API and process it. Return an array of formatted fields.
 voterGuide.loadData = function(url, options, req, res){
@@ -66,18 +71,28 @@ voterGuide.filterData = function(data, options) {
   
   // Map and limit data.
   var filteredData = [];
+
+  // if (voterGuide[options.dataType]['clusterFields'].length > 0) {
+  //   _.each(voterGuide[options.dataType]['clusterFields'], function(cluster) {
+  //     filteredData[cluster] = {};
+  //   };
+    
+  // }
+
   for(var i=0; i < voterGuide[options.dataType]['limit']; i++) {
-    var record = parsedData[i];
-    var formatted = {};
-    _.each(voterGuide[options.dataType]['fields'], function(field) { 
-      if (record[field] !== undefined) {
-        formatted[field] = record[field];
-      }
-      else {
-        formatted[field] = ""; 
-      }
-    });
-    filteredData.push(formatted);
+    if (parsedData[i] !== undefined) {
+      var record = parsedData[i];
+      var formatted = {};
+      _.each(voterGuide[options.dataType]['fields'], function(field) { 
+        if (record[field] !== undefined) {
+          formatted[field] = record[field];
+        }
+        else {
+          formatted[field] = ""; 
+        }
+      });
+      filteredData.push(formatted);
+    }
   }
   return filteredData;
 };
@@ -97,6 +112,7 @@ app.set('view engine', 'jade');
 // }));
 
 app.use(express.static('public'));
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 // Load main page content.
 app.get('/', function(req, res) {

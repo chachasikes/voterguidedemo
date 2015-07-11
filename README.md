@@ -33,5 +33,12 @@ Sketch out basic architecture on paper. A more involved version would include so
 ## Design
 Similar to wireframes, based on user research, design some mockups and do some design discovery. 
 
+## Nodes
+- Node version v0.12.7 is the latest.
+
 ## Recommendations
 - Incoporate Swagger Docs for API endpoints.
+
+## SASS
+sass public/css/style.scss:public/css/app.css
+sass --watch public/css/style.scss:public/css/app.css
