@@ -7,8 +7,7 @@ var async = require('async');
 var rp = require('request-promise');
 var _ = require('underscore');
 var jade = require('jade');
-// var sass  = require('node-sass');
-// var sassMiddleware = require('node-sass-middleware');
+var sass  = require('node-sass');
 var compileSass = require('express-compile-sass');
 var path = require('path');
 
