@@ -1,0 +1,41 @@
+{
+  "name": "votersguide2016",
+  "version": "0.0.1",
+  "description": "Voters guide example",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/chachasikes/votersguide2016.git"
+  },
+  "keywords": [
+    "voters",
+    "guide",
+    "nodejs",
+    "express",
+    "jade",
+    "API",
+    "data",
+    "publishing"
+  ],
+  "author": "Chacha Sikes",
+  "license": "GPL-3.0",
+  "homepage": "https://bitbucket.org/chachasikes/votersguide2016#readme",
+  "dependencies": {
+    "express": "^4.13.1",
+    "jade": "^1.11.0",
+    "jasmine-node": "^1.14.5",
+    "react": "^0.13.3",
+    "request": "^2.58.0"
+  },
+  "devDependencies": {
+    // "gulp": "^3.9.0",
+    // "gulp-concat": "^2.6.0",
+    // "gulp-html-replace": "^1.5.1",
+    // "gulp-react": "^3.0.1",
+    // "gulp-uglify": "^1.2.0",
+    "react-tools": "^0.13.3"
+  }
+}
