@@ -86,7 +86,7 @@ var Measures = React.createClass({
         <div className="description"><div className="content"
           dangerouslySetInnerHTML={{
             __html: item.summary
-          }}/> {this.readMore(item.read_more)}</div>
+          }}/> {this.readMore(item.url)}</div>
 
 
 

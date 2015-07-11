@@ -15,10 +15,17 @@ p {
   font-size: $default-font-size;
 }
 
-a {
+a,a:visited {
   text-decoration: none;
   color: $color-highlight-text;
 }
+
+a:active,a:hover {
+  border-top: solid 2px $color-light-medium-grey;
+  color: $color-medium-text;
+  text-decoration: none;
+}
+
 
 .set-item {
   margin-bottom: 40px;
