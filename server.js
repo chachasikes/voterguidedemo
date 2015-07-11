@@ -7,7 +7,11 @@ var async = require('async');
 var rp = require('request-promise');
 var _ = require('underscore');
 var jade = require('jade');
+// var sass  = require('node-sass');
+// var sassMiddleware = require('node-sass-middleware');
+var compileSass = require('express-compile-sass');
 var path = require('path');
+
 
 // App settings.
 var voterGuide = {};
@@ -66,9 +70,13 @@ voterGuide.filterData = function(data, options) {
   for(var i=0; i < voterGuide[options.dataType]['limit']; i++) {
     var record = parsedData[i];
     var formatted = {};
-    console.log(voterGuide[options.dataType]['fields']);
     _.each(voterGuide[options.dataType]['fields'], function(field) { 
-      formatted[field] = record[field];
+      if (record[field] !== undefined) {
+        formatted[field] = record[field];
+      }
+      else {
+        formatted[field] = ""; 
+      }
     });
     filteredData.push(formatted);
   }
@@ -78,6 +86,14 @@ voterGuide.filterData = function(data, options) {
 var app = module.exports = express();
 app.set('views', './views');
 app.set('view engine', 'jade');
+
+app.use(compileSass({
+    root: 'public/',
+    sourceMap: true, // Includes Base64 encoded source maps in output css 
+    sourceComments: true, // Includes source comments in output css 
+    watchFiles: true, // Watches sass files and updates mtime on main files for each change 
+    logToConsole: false // If true, will log to console.error on errors 
+}));
 
 app.use(express.static('public'));
 

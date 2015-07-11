@@ -33,3 +33,5 @@ Sketch out basic architecture on paper. A more involved version would include so
 ## Design
 Similar to wireframes, based on user research, design some mockups and do some design discovery. 
 
+## Recommendations
+- Incoporate Swagger Docs for API endpoints.

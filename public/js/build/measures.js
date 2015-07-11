@@ -12,21 +12,10 @@ var Measures = React.createClass({
       items: []
     };
   },
-
+  // Load data from local API.
   componentDidMount: function() {
 
     var sourcePath = 'api/measures'
-
-    // $.get(sourcePath, function(result) {
-    //   console.log(result);
-    //   // if (this.isMounted()) {
-    //   //   this.setState({
-    //   //     username: lastGist.owner.login,
-    //   //     lastGistUrl: lastGist.html_url
-    //   //   });
-    //   // }
-    // }.bind(this));
-
 
     $.ajax({
       url: sourcePath,
@@ -43,14 +32,14 @@ var Measures = React.createClass({
     });
   },
 
+  // Render each item.
   eachItem: function(item, i) {
     if (item !== null) {
       return (React.createElement("div", {className: "set-item"}, 
-      React.createElement("h1", null, item.ballot_section), 
-      React.createElement("h2", null, item.contest), 
-      React.createElement("div", {className: "identifier"}, item.identifier), 
-      React.createElement("div", {className: "topic"}, item.topic), 
-      React.createElement("div", {className: "image"}, React.createElement("img", {src: "http://216.151.17.6:3000" + item.url}))
+      React.createElement("div", {className: "ballot-section"}, item.ballot_section), 
+      React.createElement("div", {className: "contest"}, item.contest), 
+      React.createElement("div", {className: "identifier"}, React.createElement("a", {href: item.url}, item.identifier)), 
+      React.createElement("div", {className: "topic"}, item.topic)
       ));
     }
     else {

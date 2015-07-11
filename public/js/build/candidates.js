@@ -6,27 +6,17 @@ var Candidates = React.createClass({
   getDefaultProps: function() {
     return {};
   },
-
+  // Establish initial state.
   getInitialState: function() {
     return {
       items: []
     };
   },
 
+  // Load data from local API.
   componentDidMount: function() {
 
     var sourcePath = 'api/candidates'
-
-    // $.get(sourcePath, function(result) {
-    //   console.log(result);
-    //   // if (this.isMounted()) {
-    //   //   this.setState({
-    //   //     username: lastGist.owner.login,
-    //   //     lastGistUrl: lastGist.html_url
-    //   //   });
-    //   // }
-    // }.bind(this));
-
 
     $.ajax({
       url: sourcePath,
@@ -43,16 +33,15 @@ var Candidates = React.createClass({
     });
   },
 
+  // Render each item.
   eachItem: function(item, i) {
-    console.log(item);
     if (item !== null) {
       return (React.createElement("div", {className: "set-item"}, 
-      React.createElement("h1", null, item.ballot_section), 
-      React.createElement("h2", null, item.contest), 
-      React.createElement("div", {className: "name"}, item.name), 
+      React.createElement("div", {className: "ballot-section"}, item.ballot_section), 
+      React.createElement("div", {className: "contest"}, item.contest), 
+      React.createElement("div", {className: "name"}, React.createElement("a", {href: item.url}, item.name)), 
       React.createElement("div", {className: "party"}, item.party), 
-      React.createElement("div", {className: "vote"}, item.yes_no), 
-      React.createElement("div", {className: "image"}, React.createElement("img", {src: "http://216.151.17.6:3000" + item.url}))
+      React.createElement("div", {className: "vote"}, item.yes_no)
       ));
     }
     else {
@@ -69,5 +58,4 @@ var Candidates = React.createClass({
         this.state.items.map(this.eachItem)
       ));
   },
-
 });

@@ -6,27 +6,17 @@ var Candidates = React.createClass({
   getDefaultProps: function() {
     return {};
   },
-
+  // Establish initial state.
   getInitialState: function() {
     return {
       items: []
     };
   },
 
+  // Load data from local API.
   componentDidMount: function() {
 
     var sourcePath = 'api/candidates'
-
-    // $.get(sourcePath, function(result) {
-    //   console.log(result);
-    //   // if (this.isMounted()) {
-    //   //   this.setState({
-    //   //     username: lastGist.owner.login,
-    //   //     lastGistUrl: lastGist.html_url
-    //   //   });
-    //   // }
-    // }.bind(this));
-
 
     $.ajax({
       url: sourcePath,
@@ -43,16 +33,72 @@ var Candidates = React.createClass({
     });
   },
 
+  // Attributes Referernce.
+  // Add attributes by adding to the voterGuide.candidates.fields array.
+
+  // ballot_section: "Federal",
+  // contest: "Congressional House of Representatives District 13 - California",
+  // name: "Barbara Lee",
+  // party: "Democratic",
+  // yes_no: 0,
+  // url: "candidate/2014/november/california/13-representative/249-barbara-lee",
+  // office_lang_id: 25,
+  // office_id: 56,
+  // language_id: 1,
+  // district_display: "District 13",
+  // office_body: "House of Representatives",
+  // office_name: "Congressional House of Representatives",
+  // member_title: "Representative",
+  // short_member_title: "Rep.",
+  // office_lang_timestamp: "2015-06-16T02:10:53.000Z",
+  // candidate_id: 5771,
+  // person_id: 249,
+  // fec_id: "H8CA09060",
+  // election_date: "2014-11-04T00:00:00.000Z",
+  // election_type: "G",
+  // session: "",
+  // party_id: 1,
+  // ico: "",
+  // status_code_id: 0,
+  // status_date: "0000-00-00",
+  // votes: 0,
+  // published: 1,
+  // last_funding_update: "2014-09-03T00:00:00.000Z",
+  // last_funding_filed_date: "0000-00-00",
+  // funding_csv_file: "",
+  // unpublished_csv_file: "",
+  // flags: "",
+  // source: "",
+  // import_batch_id: "",
+  // candidate_timestamp: "2014-09-18T19:27:18.000Z",
+  // first_name: "Barbara",
+  // middle_name: "",
+  // last_name: "Lee",
+  // name_suffix: "",
+  // name_prefix: "",
+  // nick_name: "",
+  // original_name: "Barbara Lee",
+  // display_name: "Barbara Lee",
+  // gender: "F",
+  // has_picture: 1,
+  // bio: "",
+  // import_flag: "4334",
+  // person_timestamp: "2014-02-27T20:20:38.000Z",
+  // party_abbrev: "DEM",
+  // party_name: "Democratic",
+  // party_type: "D",
+  // state: "CA",
+  // state_name: "California"
+
+  // Render each item.
   eachItem: function(item, i) {
-    console.log(item);
     if (item !== null) {
       return (<div className="set-item">
-      <h1>{item.ballot_section}</h1>
-      <h2>{item.contest}</h2>
-      <div className="name">{item.name}</div>
+      <div className="ballot-section">{item.ballot_section}</div>
+      <div className="contest">{item.contest}</div>
+      <div className="name"><a href={item.url}>{item.name}</a></div>
       <div className="party">{item.party}</div>
       <div className="vote">{item.yes_no}</div>
-      <div className="image"><img src={"http://216.151.17.6:3000" + item.url} /></div>
       </div>);
     }
     else {
@@ -69,5 +115,4 @@ var Candidates = React.createClass({
         {this.state.items.map(this.eachItem)}
       </div>);
   },
-
 });
