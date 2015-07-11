@@ -27,9 +27,9 @@ The testing framework used here is Jasmine.
 ## Data Markup
 Basic barely styled version of data backend.
 
-
 ## Wireframes
+Sketch out basic architecture on paper. A more involved version would include some paper prototyping and user research.
 
 ## Design
-
+Similar to wireframes, based on user research, design some mockups and do some design discovery. 
 
