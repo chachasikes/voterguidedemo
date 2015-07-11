@@ -81,7 +81,7 @@ var Measures = React.createClass({
         React.createElement("div", {className: "name"}, React.createElement("a", {href: item.url}, item.identifier)), 
         React.createElement("div", {className: "measure-name"}, item.office_name), 
         React.createElement("div", {className: "district"}, item.district), 
-        React.createElement("div", {className: "measure-topic"}, item.topic), 
+        React.createElement("div", {className: "measure-topic"}, React.createElement("a", {href: item.url}, item.topic)), 
         React.createElement("div", {className: "measure-type"}, item.proposition_type), 
         React.createElement("div", {className: "description"}, React.createElement("span", {className: "content", 
           dangerouslySetInnerHTML: {
@@ -100,7 +100,7 @@ var Measures = React.createClass({
   readMore: function(value) {
     if (value !== undefined) {
       var link = React.createElement('a', {href: value, target: '_blank'}, 'More');
-      return (React.createElement("span", null, React.createElement("a", {href: value, target: "_blank"}, "Read more", React.createElement("span", {className: "glyphicon glyphicon-link btn-xs"}))));
+      return (React.createElement("span", null, React.createElement("a", {href: value, target: "_blank"}, "Full Text", React.createElement("span", {className: "glyphicon glyphicon-link btn-xs"}))));
     }
     else {
       return;

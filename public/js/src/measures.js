@@ -81,7 +81,7 @@ var Measures = React.createClass({
         <div className="name"><a href={item.url}>{item.identifier}</a></div>
         <div className="measure-name">{item.office_name}</div>
         <div className="district">{item.district}</div>
-        <div className="measure-topic">{item.topic}</div>
+        <div className="measure-topic"><a href={item.url}>{item.topic}</a></div>
         <div className="measure-type">{item.proposition_type}</div>
         <div className="description"><span className="content"
           dangerouslySetInnerHTML={{
@@ -100,7 +100,7 @@ var Measures = React.createClass({
   readMore: function(value) {
     if (value !== undefined) {
       var link = React.createElement('a', {href: value, target: '_blank'}, 'More');
-      return (<span><a href={value} target='_blank'>Read more<span className='glyphicon glyphicon-link btn-xs'></span></a></span>);
+      return (<span><a href={value} target='_blank'>Full Text<span className='glyphicon glyphicon-link btn-xs'></span></a></span>);
     }
     else {
       return;

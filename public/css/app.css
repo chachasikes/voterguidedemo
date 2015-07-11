@@ -43,9 +43,8 @@ a:active, a:hover {
   color: #38383a;
   line-height: 1em; }
 .set-item[type="measure"] .description {
-  margin-top: 20px; }
+  margin-top: 10px; }
 .set-item[type="measure"] a, .set-item[type="measure"] a:visited {
-  font-weight: 700;
   text-align: right; }
 .set-item[type="measure"] a:active, .set-item[type="measure"] a:hover {
   color: #626368;
