@@ -75,22 +75,22 @@ var Measures = React.createClass({
   // Render each item.
   eachItem: function(item, i) {
     if (item !== null) {
-      return (<div className="set-item" type="measure">
+      return (React.createElement("div", {className: "set-item", type: "measure"}, 
 
-        <div className="ballot-section">{item.ballot_section}</div>
-        <div className="name"><a href={item.url}>{item.identifier}</a></div>
-        <div className="measure-name">{item.office_name}</div>
-        <div className="district">{item.district}</div>
-        <div className="measure-topic">{item.topic}</div>
-        <div className="measure-type">{item.proposition_type}</div>
-        <div className="description"><span className="content"
-          dangerouslySetInnerHTML={{
+        React.createElement("div", {className: "ballot-section"}, item.ballot_section), 
+        React.createElement("div", {className: "name"}, React.createElement("a", {href: item.url}, item.identifier)), 
+        React.createElement("div", {className: "measure-name"}, item.office_name), 
+        React.createElement("div", {className: "district"}, item.district), 
+        React.createElement("div", {className: "measure-topic"}, item.topic), 
+        React.createElement("div", {className: "measure-type"}, item.proposition_type), 
+        React.createElement("div", {className: "description"}, React.createElement("div", {className: "content", 
+          dangerouslySetInnerHTML: {
             __html: item.summary
-          }}/> {this.readMore(item.url)}</div>
+          }}), " ", this.readMore(item.url))
 
 
 
-      </div>);
+      ));
     }
     else {
       return;
@@ -100,7 +100,7 @@ var Measures = React.createClass({
   readMore: function(value) {
     if (value !== undefined) {
       var link = React.createElement('a', {href: value, target: '_blank'}, 'More');
-      return (<span><a href={value} target='_blank'>Read more<span className='glyphicon glyphicon-link btn-xs'></span></a></span>);
+      return (React.createElement("div", null, React.createElement("a", {href: value, target: "_blank"}, "MORE"))); //<span className='glyphicon glyphicon-link'></span>
     }
     else {
       return;
@@ -113,9 +113,9 @@ var Measures = React.createClass({
   },
 
   renderDisplay: function() {
-    return ( <div className="set" >
-        {this.state.items.map(this.eachItem)}
-      </div>);
+    return ( React.createElement("div", {className: "set"}, 
+        this.state.items.map(this.eachItem)
+      ));
   },
 
 });

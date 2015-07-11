@@ -21,7 +21,6 @@ a,a:visited {
 }
 
 a:active,a:hover {
-  border-top: solid 2px $color-light-medium-grey;
   color: $color-medium-text;
   text-decoration: none;
 }
@@ -53,6 +52,7 @@ a:active,a:hover {
   }
 
   .measure-type{
+    margin-top: 5px;
     font-size: $font-size-large;
     color: $color-dark-grey-text;
   }
@@ -60,6 +60,17 @@ a:active,a:hover {
   .description {
     margin-top: 10px;
   }
+
+  a,a:visited  {
+    font-weight: $font-weight-bold;
+    text-align: right;
+  }
+
+  a:active,a:hover {
+    color: $color-medium-text;
+    text-decoration: none;
+  }
+
 
 }
 .set-item[type="candidate"] {

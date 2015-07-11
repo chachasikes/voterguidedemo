@@ -15,7 +15,6 @@ a, a:visited {
   color: #2e3042; }
 
 a:active, a:hover {
-  border-top: solid 2px #9a9ba5;
   color: #626368;
   text-decoration: none; }
 
@@ -36,10 +35,17 @@ a:active, a:hover {
   font-size: 2.8em;
   line-height: 1em; }
 .set-item[type="measure"] .measure-type {
+  margin-top: 5px;
   font-size: 1.4em;
   color: #38383a; }
 .set-item[type="measure"] .description {
   margin-top: 10px; }
+.set-item[type="measure"] a, .set-item[type="measure"] a:visited {
+  font-weight: 700;
+  text-align: right; }
+.set-item[type="measure"] a:active, .set-item[type="measure"] a:hover {
+  color: #626368;
+  text-decoration: none; }
 
 .set-item[type="candidate"] .name {
   font-size: 2.8em; }
