@@ -33,7 +33,8 @@ a:active, a:hover {
   height: 1.3em; }
 .set-item[type="measure"] .name {
   margin-top: 20px;
-  font-size: 1.4em; }
+  font-size: 1.4em;
+  font-weight: 700; }
 .set-item[type="measure"] .measure-topic {
   font-size: 2.8em;
   line-height: 1em; }
