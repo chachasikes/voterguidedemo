@@ -7,23 +7,42 @@ body {
   color: $color-dark-text;
 }
 
+h2 {
+  font-weight: $font-weight-bold;
+}
+
+p {
+  font-size: $default-font-size;
+}
+
+a {
+  text-decoration: none;
+  color: $color-highlight-text;
+}
+
 .set-item {
   margin-bottom: 40px;
-
-  .ballot-section {
-    font-weight: $font-weight-light;
-  }
   .contest {
     font-size: $font-size-large;
-
   }
 
 }
 
 .set-item[type="measure"] {
+  .ballot-section {
+    background-color: $color-light-medium-grey;
+    font-size: $font-size-XS;
+    color: $color-offwhite;
+    padding: 2px 4px;
+    text-transform: uppercase;
+  }
+  .name {
+    font-size: $font-size-large;
+  }
 
   .measure-topic {
     font-size: $font-size-XL;
+    line-height: 1em;
   }
 
   .measure-type{
@@ -32,18 +51,14 @@ body {
   }
 
   .description {
-    margin-top: 20px;
+    margin-top: 10px;
   }
-
 
 }
 .set-item[type="candidate"] {
 
-
-
   .name {
     font-size: $font-size-XL;
-    font-weight: $font-weight-bold;
   }
 
   .party {
@@ -59,7 +74,6 @@ body {
   .party[type="party-type-R"] {
     background-color: $color-party-republican;
   }
-
 
   .vote {
 

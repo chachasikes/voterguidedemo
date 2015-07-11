@@ -1,29 +1,45 @@
 body {
   background: #fefefe;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Raleway", sans-serif;
   color: #111111; }
 
+h2 {
+  font-weight: 700; }
+
+p {
+  font-size: 16px; }
+
+a {
+  text-decoration: none;
+  color: #2e3042; }
+
 .set-item {
   margin-bottom: 40px; }
-  .set-item .ballot-section {
-    font-weight: 100; }
   .set-item .contest {
-    font-size: 1.2em; }
+    font-size: 1.4em; }
 
+.set-item[type="measure"] .ballot-section {
+  background-color: #9a9ba5;
+  font-size: 0.7em;
+  color: #fefefe;
+  padding: 2px 4px;
+  text-transform: uppercase; }
+.set-item[type="measure"] .name {
+  font-size: 1.4em; }
 .set-item[type="measure"] .measure-topic {
-  font-size: 2em; }
+  font-size: 2.8em;
+  line-height: 1em; }
 .set-item[type="measure"] .measure-type {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #38383a; }
 .set-item[type="measure"] .description {
-  margin-top: 20px; }
+  margin-top: 10px; }
 
 .set-item[type="candidate"] .name {
-  font-size: 2em;
-  font-weight: 700; }
+  font-size: 2.8em; }
 .set-item[type="candidate"] .party {
-  font-size: 0.6em;
+  font-size: 0.7em;
   color: #fefefe;
   padding: 2px 4px; }
 .set-item[type="candidate"] .party[type="party-type-D"] {
