@@ -24,7 +24,6 @@ voterGuide.measures.fields = ['ballot_section', 'contest', 'identifier','topic',
 // Load data from API and process it. Return an array of formatted fields.
 voterGuide.loadData = function(url, options, req, res){
   var self = this;
-  console.log(url);
   var requestOpts = {
       uri: url,
       method: 'GET',
@@ -100,4 +99,6 @@ app.get('/api/candidates', function(req, res) {
   voterGuide.loadData(voterGuide.candidates.endpoint, {dataType: "candidates"}, req, res);
 });
 
-app.listen(3000);
+
+// @TODO abstract this to also use port 3000 or an environment variable for server.
+app.listen(7001);
