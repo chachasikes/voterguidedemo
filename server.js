@@ -87,7 +87,7 @@ app.set('views', './views');
 app.set('view engine', 'jade');
 
 app.use(compileSass({
-    root: 'public/',
+    root: 'public',
     sourceMap: true, // Includes Base64 encoded source maps in output css 
     sourceComments: true, // Includes source comments in output css 
     watchFiles: true, // Watches sass files and updates mtime on main files for each change 
