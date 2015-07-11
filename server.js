@@ -86,8 +86,10 @@ var app = module.exports = express();
 app.set('views', './views');
 app.set('view engine', 'jade');
 
+root = process.cwd();
+console.log(root);
 app.use(compileSass({
-    root: 'public',
+    root: root + "/public",
     sourceMap: true, // Includes Base64 encoded source maps in output css 
     sourceComments: true, // Includes source comments in output css 
     watchFiles: true, // Watches sass files and updates mtime on main files for each change 
