@@ -16,7 +16,7 @@ var voterGuide = {};
 voterGuide.localData = {};
 
 voterGuide.candidates = {};
-voterGuide.candidates.limit = 15;
+voterGuide.candidates.limit = 30;
 voterGuide.candidates.endpoint = "http://216.151.17.6:3000/api/votersedge/candidates/all";
 voterGuide.candidates.fields = ['ballot_section', 'contest', 'name','party','yes_no','url', "office_name", "district_display", "election_date", "party_type", "state_name"]; // These are currently identical but this can be used to validate and limit data returned.
 voterGuide.candidates.clusterFields = ['election_date', 'contest'];

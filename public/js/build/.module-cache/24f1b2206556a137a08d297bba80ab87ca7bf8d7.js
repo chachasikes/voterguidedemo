@@ -93,23 +93,23 @@ var Candidates = React.createClass({
   // Render each item.
   eachItem: function(item, i) {
     if (item !== null) {
-      return (<div className="set-item" type="candidate">
-        <div className="name"><a href={item.url}>{item.name}</a></div>
-        <div className="party" type={"party-type-" + item.party_type}>{this.formatPartyType(item.party_type)}</div>
-        <div className="ballot-section">{item.ballot_section}</div>
-        <div className="contest">{item.office_name}</div>
-        <div className="district">{item.district_display}</div>
-        <div className="vote">{this.checkBox(item.yes_no)}</div>
-      </div>);
+      return (React.createElement("div", {className: "set-item", type: "candidate"}, 
+        React.createElement("div", {className: "name"}, React.createElement("a", {href: item.url}, item.name)), 
+        React.createElement("div", {className: "party", type: "party-type-" + item.party_type}, item.party_type), 
+        React.createElement("div", {className: "ballot-section"}, item.ballot_section), 
+        React.createElement("div", {className: "contest"}, item.office_name), 
+        React.createElement("div", {className: "district"}, item.district_display), 
+        React.createElement("div", {className: "vote"}, this.checkBox(item.yes_no))
+      ));
     }
     else {
       return;
     }
   },
 
-  formatPartyType: function(value) {
+  validatePartyType: function(value) {
     if (value == 'X') {
-      return '&nbsp;';
+      return;
     }
     else {
       return value;
@@ -119,7 +119,7 @@ var Candidates = React.createClass({
 
   checkBox: function(value) {
     if(value === 1) {
-      return (<div></div>)
+      return (React.createElement("div", null))
     }
     else {
       return
@@ -132,8 +132,8 @@ var Candidates = React.createClass({
   },
 
   renderDisplay: function() {
-    return ( <div className="set" >
-        {this.state.items.map(this.eachItem)}
-      </div>);
+    return ( React.createElement("div", {className: "set"}, 
+        this.state.items.map(this.eachItem)
+      ));
   },
 });

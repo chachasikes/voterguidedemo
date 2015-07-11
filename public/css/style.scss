@@ -77,12 +77,15 @@ a:active,a:hover {
 
   .name {
     font-size: $font-size-XL;
+    line-height: 1em;
   }
 
   .party {
     font-size: $font-size-XS;
     color: $color-offwhite;
     padding: 2px 4px;
+    background-color: $color-light-medium-grey;
+    line-height: 1em;
   }
 
   .party[type="party-type-D"] {
@@ -92,6 +95,8 @@ a:active,a:hover {
   .party[type="party-type-R"] {
     background-color: $color-party-republican;
   }
+
+
 
   .vote {
 
